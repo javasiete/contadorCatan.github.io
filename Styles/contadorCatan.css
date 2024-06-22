@@ -1,0 +1,99 @@
+/* Selector universal */
+* {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+  margin: 0;
+  background-color:lightgrey
+}
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+
+.main{
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.contador_1 {
+  margin: px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: inline-block;
+  text-align: center;
+  border: 2px solid black;
+  background-color: rgb(253, 181, 47);
+}
+
+.contador_2 {
+  margin: px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: inline-block;
+  text-align: center;
+  border: 2px solid black;
+  background-color: rgb(49, 28, 240);
+}
+
+.contador_3 {
+  margin: px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: inline-block;
+  text-align: center;
+  border: 2px solid black;
+  background-color: rgb(236, 41, 41);
+}
+
+.contador_4 {
+  margin: px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: inline-block;
+  text-align: center;
+  border: 2px solid black;
+  background-color: rgb(238, 240, 216);
+}
+
+
+.nombre {
+  font-size: 1.2em;
+  font-weight: bold;
+  background-color: transparent;
+}
+.valor {
+  font-size: 2em;
+  margin: 10px 0;
+  background-color: transparent;
+}
+.btn {
+  font-size: 1.5em;
+  padding: 5px 10px;
+  margin: px;
+  cursor: pointer;
+  border: none;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+}
+.btn:hover {
+  background-color: grey;
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------*/
+
+/* Media Queries para Celulares (768px o mas) */
+@media only screen and (max-width: 768px){
+
+}
