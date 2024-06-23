@@ -16,12 +16,39 @@ body {
 
 .main{
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
   gap: 10px;
-  justify-content: center;
-  margin-top: 10px;
+  background-image: url('/imgs/fondo.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.9; 
 }
 
-.contador_1 {
+.parte_arriba{
+  display: flex;
+  gap: 10px;
+  background-color: transparent;
+}
+
+.parte_abajo {
+  display:flex;
+  gap: 10px;
+  background-color: transparent;
+}
+
+.resumen{
+  padding: 10px 40px;
+}
+
+.parte_final {
+  padding-top: 90px;
+  padding-bottom: 30px;
+  background-color: transparent;
+}
+
+.contador_1 { /* Jugador Naranja */
   margin: px;
   padding: 10px;
   border: 1px solid #ccc;
@@ -32,7 +59,7 @@ body {
   background-color: rgb(253, 181, 47);
 }
 
-.contador_2 {
+.contador_2 { /* Jugador Azul */
   margin: px;
   padding: 10px;
   border: 1px solid #ccc;
@@ -40,10 +67,11 @@ body {
   display: inline-block;
   text-align: center;
   border: 2px solid black;
-  background-color: rgb(49, 28, 240);
+  background-color: rgb(22, 11, 141);
+  color: white;
 }
 
-.contador_3 {
+.contador_3 { /* Jugador Rojo */
   margin: px;
   padding: 10px;
   border: 1px solid #ccc;
@@ -52,9 +80,10 @@ body {
   text-align: center;
   border: 2px solid black;
   background-color: rgb(236, 41, 41);
+  color: white;
 }
 
-.contador_4 {
+.contador_4 { /* Jugador Blanco */
   margin: px;
   padding: 10px;
   border: 1px solid #ccc;
@@ -64,6 +93,30 @@ body {
   border: 2px solid black;
   background-color: rgb(238, 240, 216);
 }
+
+.contador_5 { /* Fuerza Barbara */
+  margin: px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: inline-block;
+  text-align: center;
+  border: 2px solid black;
+  background-color: rgb(70, 68, 68);
+  color: white
+}
+
+.contador_6 { /* Fuerza Caballeros */
+  margin: px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: inline-block;
+  text-align: center;
+  border: 2px solid black;
+  background-color: rgb(255, 255, 255);
+}
+
 
 
 .nombre {
@@ -90,6 +143,17 @@ body {
   background-color: grey;
 }
 
+.green-text {
+  color: rgb(7, 206, 7);
+}
+.red-text {
+  color: red;
+}
+
+.resumen{
+  font-size: 1.5em;
+  font-weight: bolder;
+}
 
 /* ------------------------------------------------------------------------------------------------------------------------------*/
 
