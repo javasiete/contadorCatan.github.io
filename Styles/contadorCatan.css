@@ -20,7 +20,7 @@ body {
   align-items: center;
   padding-top: 30px;
   gap: 10px;
-  background-image: url('./imgs/fondo.jpg');
+  background-image: url('../imgs/fondo.jpg');
   background-size: cover;
   background-position: center;
   opacity: 0.9; 
