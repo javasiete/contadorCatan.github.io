@@ -11,67 +11,97 @@
   </head>
 
   <div class="main">
+    <div id="divIntro">
+      <h1>Partida para 4 Jugadores</h1>
 
-    <div class="parte_arriba">
-      <div class="contador_1">
-        <div class="nombre">Sebas</div>
-        <div class="valor" id="j.naranja">3</div>
-        <button class="btn" onclick="decrementar('j.naranja')">-</button>
-        <button class="btn" onclick="incrementar('j.naranja')">+</button>
-        
+      <div class="box_jugador1">
+        <h3>Jugador Naranja:</h3>
+        <input type="text" class="input_nombre" id="persona1" style="width: 200px" placeholder="Escriba aquí el Nombre">
       </div>
-      
-      <div class="contador_2">
-        <div class="nombre">Marian</div>
-        <div class="valor" id="j.azul">3</div>
-        <button class="btn" onclick="decrementar('j.azul')">-</button>
-        <button class="btn" onclick="incrementar('j.azul')">+</button>
-        
+      <div class="box_jugador2">
+        <h3>Jugador Azul:</h3>
+        <input type="text" class="input_nombre" id="persona2" style="width: 200px" placeholder="Escriba aquí el Nombre">
       </div>
-      
-      <div class="contador_3">
-        <div class="nombre">Javi</div>
-        <div class="valor" id="j.rojo">3</div>
-        <button class="btn" onclick="decrementar('j.rojo')">-</button>
-        <button class="btn" onclick="incrementar('j.rojo')">+</button>
-        
+      <div class="box_jugador3">
+        <h3>Jugador Rojo:</h3>
+        <input type="text" class="input_nombre" id="persona3" style="width: 200px" placeholder="Escriba aquí el Nombre">
       </div>
-      
-      <div class="contador_4">
-        <div class="nombre">Charie</div>
-        <div class="valor" id="j.blanco">3</div>
-        <button class="btn" onclick="decrementar('j.blanco')">-</button>
-        <button class="btn" onclick="incrementar('j.blanco')">+</button>
-        
+      <div class="box_jugador4">
+        <h3>Jugador Blanco:</h3>
+        <input type="text" class="input_nombre" id="persona4" style="width: 200px" placeholder="Escriba aquí el Nombre">
       </div>
-    </div> <!-- Fin Parte_Arriba-->
 
-    <div class="parte_abajo">
-      <div class="contador_5" id="div_fuerza_barbara">
-        <div class="nombre">Fuerza Barbara</div>
-        <div class="valor" id="f.barbara">4</div>
-        <button class="btn" onclick="decrementar('f.barbara')">-</button>
-        <button class="btn" onclick="incrementar('f.barbara')">+</button>
-      </div>
-      
-      <div class="contador_6" id="div_fuerza_caballeros">
-        <div class="nombre">Fuerza de Caballeros</div>
-        <div class="valor" id="f.caballeros">0</div>
-        <button class="btn" id="reiniciar_F.Caballeros">Rein.</button>
-        <button class="btn" onclick="decrementar('f.caballeros')">-</button>
-        <button class="btn" onclick="incrementar('f.caballeros')">+</button>
-      </div>
-    </div> <!-- Fin Parte_Abajo-->
+      <button onclick="mostrar_divEnPartida()" class="btn_continuar">Continuar</button>
 
-    <div class="resumen" id="resumen">
-      Están Perdiendo
-    </div>
-
-    <div class="parte_final">
-      <button class="btn" id="reiniciar">Reinicar Juego</button>
-
+      <audio id="sonido">
+        <source src="./imgs/grito_espartano.mp3" type="audio/mpeg">
+      </audio>
 
     </div>
+
+    <div id="divEnPartida" class="divEnPartida" style="display: none"> <!-- style="display: none" -->
+      <div class="parte_arriba">
+        <div class="contador_1">
+          <div class="nombre" id="nombre_jugador_naranja">Player 1</div>
+          <div class="valor" id="j.naranja">3</div>
+          <button class="btn" onclick="decrementar('j.naranja')">-</button>
+          <button class="btn" onclick="incrementar('j.naranja')">+</button>
+          
+        </div>
+        
+        <div class="contador_2">
+          <div class="nombre" id="nombre_jugador_azul">Player 2</div>
+          <div class="valor" id="j.azul">3</div>
+          <button class="btn" onclick="decrementar('j.azul')">-</button>
+          <button class="btn" onclick="incrementar('j.azul')">+</button>
+          
+        </div>
+        
+        <div class="contador_3">
+          <div class="nombre" id="nombre_jugador_rojo">Player 3</div>
+          <div class="valor" id="j.rojo">3</div>
+          <button class="btn" onclick="decrementar('j.rojo')">-</button>
+          <button class="btn" onclick="incrementar('j.rojo')">+</button>
+          
+        </div>
+        
+        <div class="contador_4">
+          <div class="nombre" id="nombre_jugador_blanco">Player 4</div>
+          <div class="valor" id="j.blanco">3</div>
+          <button class="btn" onclick="decrementar('j.blanco')">-</button>
+          <button class="btn" onclick="incrementar('j.blanco')">+</button>
+          
+        </div>
+      </div> <!-- Fin Parte_Arriba-->
+  
+      <div class="parte_abajo">
+        <div class="contador_5" id="div_fuerza_barbara">
+          <div class="nombre">Fuerza Barbara</div>
+          <div class="valor" id="f.barbara">4</div>
+          <button class="btn" onclick="decrementar('f.barbara')">-</button>
+          <button class="btn" onclick="incrementar('f.barbara')">+</button>
+        </div>
+        
+        <div class="contador_6" id="div_fuerza_caballeros">
+          <div class="nombre">Fuerza de Caballeros</div>
+          <div class="valor" id="f.caballeros">0</div>
+          <button class="btn" id="reiniciar_F.Caballeros">Rein.</button>
+          <button class="btn" onclick="decrementar('f.caballeros')">-</button>
+          <button class="btn" onclick="incrementar('f.caballeros')">+</button>
+        </div>
+      </div> <!-- Fin Parte_Abajo-->
+  
+      <div class="resumen" id="resumen">
+        Están Perdiendo
+      </div>
+  
+      <div class="parte_final">
+        <button class="btn" id="reiniciar">Reinicar Partida</button>
+      </div>
+
+    </div> <!-- Fin DIV para jugar -->
+
+    
 
     
 
