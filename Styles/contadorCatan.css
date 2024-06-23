@@ -81,6 +81,43 @@ h3{
   background-color: rgba(219, 3, 3, 0.781);
 }
 
+#botonDetener{
+  padding: 12px 20px;
+  font-size: 1em;
+  background-color: rgb(49, 44, 44);
+  color: white;
+  border: none;
+  border-radius: 19px; /*Borde redondo*/
+  cursor: pointer;
+  margin-right: 10px; /* Espacio al margen derecho */
+
+  position: fixed;
+  right: 20px;
+  width: 40px;
+
+  display: flex;
+  justify-content: center;
+}
+
+#botonReproducir{
+  padding: 12px 20px;
+  font-size: 1em;
+  background-color: rgb(49, 44, 44);
+  color: white;
+  border: none;
+  border-radius: 19px; /*Borde redondo*/
+  cursor: pointer;
+  margin-right: 10px; /* Espacio al margen derecho */
+
+  position: fixed;
+  right: 20px;
+  width: 40px;
+
+  display: flex;
+  justify-content: center;
+  visibility: hidden; /* Inicialmente estará oculto */
+}
+
 
 /*------------------------------------------------------------------------------------------------------------------------------------------------*/
 /*Desde Aca comienza la 2da PAGINA cuando están en Partida*/

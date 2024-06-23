@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Contador Catan</title> <!-- TITULO EN LA PESTAÑA -->
 
+    <!-- Link a los iconitos -->
+    <script src="https://kit.fontawesome.com/c3d324dd6f.js" crossorigin="anonymous"></script>
+
     <!-- Link a los Estilos en CSS -->
     <link rel="stylesheet" href="./Styles/contadorCatan.css"/>
 
@@ -13,6 +16,16 @@
   <div class="main">
     <div id="divIntro">
       <h1>Partida para 4 Jugadores</h1>
+
+      <button id="botonDetener" onclick="detenerMusica()" class="boton_musiquita">
+        <i class="fa-solid fa-volume-xmark" id="musica_ON"></i>
+      </button>
+
+      <button id="botonReproducir" onclick="reproducirMusica()" class="boton_musiquita" > <!-- Este boton arranca oculto style="display: none" --> 
+        <i class="fa-solid fa-volume-high" id="musica_OFF"></i>
+      </button>
+
+      
 
       <div class="box_jugador1">
         <h3>Jugador Naranja:</h3>
@@ -32,7 +45,12 @@
       </div>
 
       <button onclick="mostrar_divEnPartida()" class="btn_continuar">Continuar</button>
+      
+      
 
+      <audio id="musicaFondo">
+        <source src="./imgs/musica_age2.mp3" type="audio/mpeg">
+      </audio>
       <audio id="sonido">
         <source src="./imgs/grito_espartano.mp3" type="audio/mpeg">
       </audio>

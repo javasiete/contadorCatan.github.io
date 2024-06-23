@@ -18,11 +18,41 @@ function mostrarNombre() {
   nombreJugadorBlanco.textContent = nombre4;
 }
 
+//-----------------------------------------------------------------------------------------------------------------------
+//MUSICA de FONDO:
+
+var cancionFondo = document.getElementById('musicaFondo');
+
+// La Funcion para Reproducir la Canción:
+function reproducirCancion() {
+  cancionFondo.play();
+  document.removeEventListener('click', reproducirCancion);// Desactivar cualquier otro clic para reproducir la canción nuevamente
+}
+
+// Agregar el evento de clic para reproducir la canción al primer clic
+document.addEventListener('click', reproducirCancion);
 
 
+//-------------------------------------------------------------------------------------------------------------------------
+//Boton para DETENER la MUSICA de la PAGINA INTRO
+
+var botonDetener = document.getElementById('botonDetener');
+
+function detenerMusica() {
+  cancionFondo.pause();
+  botonDetener.style.visibility = 'hidden'; // Oculta el boton de Stop
+  botonReproducir.style.visibility = 'visible'; // Aparece el boton de Play
+}
+
+function reproducirMusica() {
+  cancionFondo.play();
+  botonReproducir.style.visibility = 'hidden'; // Oculta el boton de Play
+  botonDetener.style.visibility = 'visible'; // Aparece el boton de Stop
+}
 
 
-//Boton para que aparezca el DIV con los CONTADORES:
+//-------------------------------------------------------------------------------------------------------------------------
+//Boton para cuando PASA A LA SIGUIENTE PAGINA:
 function mostrar_divEnPartida() {
   document.getElementById('divIntro').style.display = 'none';
   document.getElementById('divEnPartida').style.display = 'block';
