@@ -40,7 +40,7 @@ h3{
 
 
 #pagina_3_para6jugadores{
-  visibility: visible;
+  display: block;
 }
 
 .botones_juntos {
