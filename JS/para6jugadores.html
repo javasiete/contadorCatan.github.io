@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Contador Catan</title> <!-- TITULO EN LA PESTAÑA -->
+
+    <!-- Link a los iconitos -->
+    <script src="https://kit.fontawesome.com/c3d324dd6f.js" crossorigin="anonymous"></script>
+
+    <!-- Link a los Estilos en CSS -->
+    <link rel="stylesheet" href="./Styles/para6jugadores.css"/>
+
+  </head>
+
+  <div class="main">
+
+    <div id="pagina_3_para6jugadores" class="pagina_3_para6jugadores">
+      <h1>Partida para 6 Jugadores</h1>
+      <h2>Asigne un Nombre a un Color</h2>
+
+      <button id="botonDetener" onclick="detenerMusica()" class="boton_musiquita";>
+        <i class="fa-solid fa-volume-high" id="musica_ON"></i>
+      </button>
+
+      <button id="botonReproducir" onclick="reproducirMusica()" class="boton_musiquita";> 
+        <i class="fa-solid fa-volume-xmark" id="musica_OFF"></i>
+      </button>
+
+      <div class="box_jugador1" id="box_jugador1">
+        <h3>Jugador Naranja:</h3>
+        <input type="text" class="input_nombre" id="persona1" style="width: 200px" placeholder="Escriba aquí el Nombre">
+      </div>
+      <div class="box_jugador2" id="box_jugador2">
+        <h3>Jugador Azul:</h3>
+        <input type="text" class="input_nombre" id="persona2" style="width: 200px" placeholder="Escriba aquí el Nombre">
+      </div>
+      <div class="box_jugador3" id="box_jugador3">
+        <h3>Jugador Rojo:</h3>
+        <input type="text" class="input_nombre" id="persona3" style="width: 200px" placeholder="Escriba aquí el Nombre">
+      </div>
+      <div class="box_jugador4" id="box_jugador4">
+        <h3>Jugador Blanco:</h3>
+        <input type="text" class="input_nombre" id="persona4" style="width: 200px" placeholder="Escriba aquí el Nombre">
+      </div>
+      <div class="box_jugador5" id="box_jugador5">
+        <h3>Jugador Verde:</h3>
+        <input type="text" class="input_nombre" id="persona5" style="width: 200px" placeholder="Escriba aquí el Nombre">
+      </div>
+      <div class="box_jugador6" id="box_jugador6">
+        <h3>Jugador Marrón:</h3>
+        <input type="text" class="input_nombre" id="persona6" style="width: 200px" placeholder="Escriba aquí el Nombre">
+      </div>
+
+      <div class="botones_juntos">
+        <button onclick="abrir_pagina_4()" class="btn_continuar">Continuar
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="btn_continuar" id="boton_regresar_pag1"> 
+          <i class="fa-solid fa-chevron-left"></i>Regresar
+        </button>
+      </div>
+      
+
+      <!-- Musica y Sonido-->
+      <audio id="musicaFondo">
+        <source src="./imgs/musica_age2.mp3" type="audio/mpeg">
+      </audio>
+      <audio id="sonido">
+        <source src="./imgs/grito_espartano.mp3" type="audio/mpeg">
+      </audio>
+
+
+    </div> <!-- Fin Pagina 3 (para 3 jugadores)-->
+
+    <div id="pagina_4" class="pagina_4"> <!-- style="display: none" -->
+      <h1>Contador de Puntos</h1>
+
+      <div class="parte_arriba">
+        <div class="contador_1" id="placa_jugador_naranja">
+          <div class="nombre" id="nombre_jugador_naranja">Player 1</div>
+          <div class="valor" id="j.naranja">3</div>
+          <button class="btn" onclick="decrementar('j.naranja')"><i class="fa-solid fa-minus"></i></button>
+          <button class="btn" onclick="incrementar('j.naranja')"><i class="fa-solid fa-plus"></i></button>
+          
+        </div>
+        
+        <div class="contador_2" id="placa_jugador_azul">
+          <div class="nombre" id="nombre_jugador_azul">Player 2</div>
+          <div class="valor" id="j.azul">3</div>
+          <button class="btn" onclick="decrementar('j.azul')"><i class="fa-solid fa-minus"></i></button>
+          <button class="btn" onclick="incrementar('j.azul')"><i class="fa-solid fa-plus"></i></button>
+          
+        </div>
+        
+        <div class="contador_3" id="placa_jugador_rojo">
+          <div class="nombre" id="nombre_jugador_rojo">Player 3</div>
+          <div class="valor" id="j.rojo">3</div>
+          <button class="btn" onclick="decrementar('j.rojo')"><i class="fa-solid fa-minus"></i></button>
+          <button class="btn" onclick="incrementar('j.rojo')"><i class="fa-solid fa-plus"></i></button>
+          
+        </div>
+        
+      </div> <!-- Fin Parte_Arriba P/1-->
+
+      <div class="parte_arriba_2">
+        <div class="contador_4" id="placa_jugador_blanco">
+          <div class="nombre" id="nombre_jugador_blanco">Player 4</div>
+          <div class="valor" id="j.blanco">3</div>
+          <button class="btn" onclick="decrementar('j.blanco')"><i class="fa-solid fa-minus"></i></button>
+          <button class="btn" onclick="incrementar('j.blanco')"><i class="fa-solid fa-plus"></i></button>
+          
+        </div>
+        
+        <div class="contador_7" id="placa_jugador_verde">
+          <div class="nombre" id="nombre_jugador_verde">Player 5</div>
+          <div class="valor" id="j.verde">3</div>
+          <button class="btn" onclick="decrementar('j.verde')"><i class="fa-solid fa-minus"></i></button>
+          <button class="btn" onclick="incrementar('j.verde')"><i class="fa-solid fa-plus"></i></button>
+          
+        </div>
+        
+        <div class="contador_8" id="placa_jugador_marron">
+          <div class="nombre" id="nombre_jugador_marron">Player 6</div>
+          <div class="valor" id="j.marron">3</div>
+          <button class="btn" onclick="decrementar('j.marron')"><i class="fa-solid fa-minus"></i></button>
+          <button class="btn" onclick="incrementar('j.marron')"><i class="fa-solid fa-plus"></i></button>
+          
+        </div>
+        
+      </div> <!-- Fin Parte_Arriba P/2-->
+  
+      <div class="parte_abajo">
+        <div class="contador_5" id="div_fuerza_barbara">
+          <div class="nombre">Fuerza Barbara</div>
+          <div class="valor" id="f.barbara">4</div>
+          <button class="btn" onclick="decrementar('f.barbara')"><i class="fa-solid fa-minus"></i></button>
+          <button class="btn" onclick="incrementar('f.barbara')"><i class="fa-solid fa-plus"></i></button>
+        </div>
+        
+        <div class="contador_6" id="div_fuerza_caballeros">
+          <div class="nombre">Fuerza de Caballeros</div>
+          <div class="valor" id="f.caballeros">0</div>
+          <button class="btn" id="reiniciar_F.Caballeros"><i class="fa-solid fa-arrow-rotate-left"></i></button>
+          <button class="btn" onclick="decrementar('f.caballeros')"><i class="fa-solid fa-minus"></i></button>
+          <button class="btn" onclick="incrementar('f.caballeros')"><i class="fa-solid fa-plus"></i></button>
+          
+        </div>
+      </div> <!-- Fin Parte_Abajo-->
+  
+      <div class="resumen" id="resumen">
+        Están Perdiendo
+      </div>
+  
+      <div class="parte_final">
+        <button class="btn_continuar" id="reiniciar">Reiniciar Partida</button>
+      </div>
+
+    </div> <!-- Fin Pagina 4 -->
+  
+  </div> <!-- Fin del Main -->
+
+  
+  <script src="./JS/para6jugadores.js"></script>
+
+</html>
