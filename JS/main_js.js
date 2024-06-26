@@ -64,8 +64,7 @@ function abrir_pagina_2() {
 }
 
 function volver_a_pagina_1() {
-  pagina_1.style.display = 'block';
-  pagina_2.style.display = 'none';
+  window.location.href = './index.html';
 }
 
 //-------------------------------------------------------------------------------------------------------------------------
@@ -202,10 +201,9 @@ function abrir_pagina_4() {
   mostrarNombre();
 }
 
-//Volver a Pagina 2
+// Vuelve a la Pagina 2 > Hice que volviera a la Pag 1 porque no andaba.
 function volver_a_pagina_2() {
-  pagina_2.style.display = 'block';
-  pagina_3.style.display = 'none';
+  window.location.href = './index.html';
 }
 
 //-------------------------------------------------------------------------------------------------------------------------

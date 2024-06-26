@@ -168,8 +168,7 @@ function abrir_pagina_3() {
 }
 
 function volver_a_pagina_2() {
-  pagina_2.style.display = 'block';
-  pagina_3.style.display = 'none';
+  window.location.href = './index.html';
 }
 
 //-----------------------------------------------------------------------------------------------------//
