@@ -61,7 +61,7 @@ function ir_a_pagina_3() {
     window.location.href = './pagina3_para4.html';
   };
 
-  if (guardarDato.length == 1){
+  if (guardarDato.length <= 1){
     alert("Debes seleccionar entre 3 y 4 colores. Te faltan al menos marcar 2 más.")
   }
 
