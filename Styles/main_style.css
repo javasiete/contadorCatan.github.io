@@ -520,6 +520,13 @@ h3{
 /*-------------------------------------------------------------------------*/
 @media screen and (max-width: 768px) {
 
+  .main{
+    height: 850px;
+    width: 100%;
+  }
+  
+  /* ------------Pagina 1 ----------------------*
+
   /*Pagina 1*/  
   .mini_container_1{
     padding-top: 20px;
