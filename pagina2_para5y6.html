@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Contador Catan Ciudades y Caballeros</title> <!-- TITULO EN LA PESTAÑA -->
+
+    <!-- Link a los iconitos -->
+    <script src="https://kit.fontawesome.com/c3d324dd6f.js" crossorigin="anonymous"></script>
+
+    <!-- Link a los Estilos en CSS -->
+    <link rel="stylesheet" href="./Styles/main_style.css"/>
+
+  </head>
+
+  <div class="main">
+
+    <div class="estetic_pagina_2">
+      <div class="pagina_2" id="pagina_2">
+        <h1>Selección de Colores</h1>
+        <h2>Marque las Casillas para elegir los Colores que habrá</h2>   
+        
+        <p><span style="font-style: italic;">En caso de ser 6 jugadores, marque todas las Casillas.<br>Si son 5 jugadores, marque los colores que se usaran.</span></p>
+  
+        <div id="contenedor_colores">
+          <button class="button" style="background: rgb(253, 181, 47); color: black;" onclick="toggleCountry('Naranja')">Naranja</button>
+          <button class="button" style="background: rgb(22, 11, 141);" onclick="toggleCountry('Azul')">Azul</button>
+          <button class="button" style="background: rgb(236, 41, 41);" onclick="toggleCountry('Rojo')">Rojo</button>
+          <button class="button" style="background: rgb(238, 240, 216); color: black;" onclick="toggleCountry('Blanco')">Blanco</button>
+          <button class="button" style="background: rgb(61, 110, 72);" onclick="toggleCountry('Verde')">Verde</button>
+          <button class="button" style="background: rgb(92, 55, 55);" onclick="toggleCountry('Marrón')">Marrón</button>
+        </div>
+        
+        <div class="para_continuar">
+          <div class="izq_pag2">
+            
+          </div>
+          <div class="med_pag2">
+            Si ya se eligieron los colores, clickee en "Continuar".
+            <button class="btn_continuar" onclick="ir_a_pagina_3()">Continuar 
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+            <button class="btn_continuar" onclick="ir_a_pagina_1()"> 
+              <i class="fa-solid fa-chevron-left"></i>Regresar
+            </button>
+  
+          </div>
+          <div class="der_pag2">
+            <div class="boton_cartaRecurso" onclick="sonido_dameMadera()">
+              <img src="./imgs/madera.png">
+            </div>
+  
+            <audio id="sonido_dameMadera">
+              <source src="./imgs/dameMadera.mp3" type="audio/mpeg">
+            </audio>
+          </div>
+          
+        </div>
+    </div> <!--Fin del Estetic Pagina 2-->
+      
+    </div> <!-- Fin Pagina 2 -->
+
+  
+  </div> <!-- Fin del Main -->
+
+  
+  <script src="./JS/pagina2_para5y6.js"></script>
+
+</html>

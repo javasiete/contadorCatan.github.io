@@ -16,23 +16,50 @@
   <div class="main">
 
     <div class="pagina_1" id="pagina_1">
-      <h1>Cantidad de Jugadores</h1>
-      <h2>Seleccione una Opción según la Cantidad de Jugadores</h2>
-
+      
+      <h1>Seleccione un Juego</h1>
       <div class="seleccion_de_juego_mesa">
-        <div class="mesa">
-          <a onclick="abrir_pagina_2()">
-            <img src="./imgs/catan_ciudades1.png" alt="" class="hipervinculo" width="150vw">
-          </a>
-          De 3 a 4 Jugadores.
-        </div>
-        <div class="mesa">
-          <a href="./para5jugadores.html">
-            <img src="./imgs/catan_ciudades2.png" alt="" class="hipervinculo" width="150vw">
-          </a>
-          De 5 a 6 Jugadores.
-        </div>
-      </div>
+        <div class="mini_container_1">
+          <h2> Catan - Juego Base</h2>
+          <div class="juegos_parte">
+            <div class="mesa">
+              <a onclick="ir_a_pagina_2_para3y4_base()">
+                <img src="./imgs/catan_base.png" alt="" class="hipervinculo" width="150vw">
+              </a>
+              De 3 a 4 Jugadores.
+            </div>
+            <div class="mesa">
+              <a onclick="ir_a_pagina_2_para5y6_base()">
+                <img src="./imgs/catan_ampliacion.png" alt="" class="hipervinculo" width="150vw">
+              </a>
+              De 5 a 6 Jugadores.
+              </div>
+          </div>
+        </div> <!-- Fin "Mini-Container"-->
+        
+        <div class="mini_container_2">
+          <h2> Catan - Ciudades y Caballeros</h2>
+          <div class="juegos_parte">
+            <div class="mesa">
+              <a onclick="ir_a_pagina_2_para3y4()">
+                <img src="./imgs/catan_ciudades1.png" alt="" class="hipervinculo" width="150vw">
+              </a>
+              De 3 a 4 Jugadores.
+            </div>
+            <div class="mesa">
+              <a onclick="ir_a_pagina_2_para5y6()">
+                <img src="./imgs/catan_ciudades2.png" alt="" class="hipervinculo" width="150vw">
+              </a>
+              De 5 a 6 Jugadores.
+            </div>
+          </div>
+
+        </div> <!-- Fin "Mini-Container"-->
+        
+      
+      </div> <!-- Fin de seleccion_de_juego_mesa -->
+
+      
 
       <div class="der_pag1">
         <div class="boton_cartaRecurso" onclick="sonido_dameAlimento()">
@@ -46,172 +73,7 @@
 
     </div> <!-- Fin Pagina 1 -->
 
-    <div class="pagina_2" id="pagina_2">
-      <h1>Selección de Colores</h1>
-      <h2>Marque las Casillas para elegir los Colores que habrá</h2>   
-      
-      <p><span style="font-style: italic;">En caso de ser 4 jugadores, marque todas las Casillas.<br>Si son 3 jugadores, marque los colores que se usaran.</span></p>
 
-      <div id="color-buttons">
-        <div class="button" style="background-color: rgb(253, 181, 47); color: black;" onclick="toggleColor('Naranja')">Naranja</div>
-        <div class="button" style="background-color: rgb(22, 11, 141);" onclick="toggleColor('Azul')">Azul</div>
-        <div class="button" style="background-color: rgb(236, 41, 41);" onclick="toggleColor('Rojo')">Rojo</div>
-        <div class="button" style="background-color: rgb(238, 240, 216); color: black;" onclick="toggleColor('Blanco')">Blanco</div>
-      </div>
-      
-      <div class="para_continuar">
-        <div class="izq_pag2">
-
-        </div>
-        <div class="med_pag2">
-          Si ya se eligieron los colores, clickee en "Continuar".
-          <button class="btn_continuar" onclick="abrir_pagina_3()">Continuar 
-            <i class="fa-solid fa-chevron-right"></i>
-          </button>
-
-          <button class="btn_continuar" onclick="volver_a_pagina_1()"> 
-            <i class="fa-solid fa-chevron-left"></i>Regresar
-          </button>
-
-        </div>
-        <div class="der_pag2">
-          <div class="boton_cartaRecurso" onclick="sonido_dameMadera()">
-            <img src="./imgs/madera.png">
-          </div>
-
-          <audio id="sonido_dameMadera">
-            <source src="./imgs/dameMadera.mp3" type="audio/mpeg">
-          </audio>
-        </div>
-        
-        
-      </div>
-      
-
-    </div> <!-- Fin Pagina 2 -->
-
-    
-    <!-- Comienza Pagina 3 -->
-    <div id="pagina_3" class="pagina_3">
-
-      <h1>Partida para 3 Jugadores</h1>
-      <h2>Asigne un Nombre a un Color</h2>
-
-      <button id="botonDetener" onclick="detenerMusica()" class="boton_musiquita";>
-        <i class="fa-solid fa-volume-high" id="musica_ON"></i>
-      </button>
-
-      <button id="botonReproducir" onclick="reproducirMusica()" class="boton_musiquita";> 
-        <i class="fa-solid fa-volume-xmark" id="musica_OFF"></i>
-      </button>
-
-      <div class="box_jugador1" id="box_jugador1">
-        <h3>Jugador Naranja:</h3>
-        <input type="text" class="input_nombre" id="persona1" style="width: 200px" placeholder="Escriba aquí el Nombre">
-      </div>
-      <div class="box_jugador2" id="box_jugador2">
-        <h3>Jugador Azul:</h3>
-        <input type="text" class="input_nombre" id="persona2" style="width: 200px" placeholder="Escriba aquí el Nombre">
-      </div>
-      <div class="box_jugador3" id="box_jugador3">
-        <h3>Jugador Rojo:</h3>
-        <input type="text" class="input_nombre" id="persona3" style="width: 200px" placeholder="Escriba aquí el Nombre">
-      </div>
-      <div class="box_jugador4" id="box_jugador4">
-        <h3>Jugador Blanco:</h3>
-        <input type="text" class="input_nombre" id="persona4" style="width: 200px" placeholder="Escriba aquí el Nombre">
-      </div>
-
-      <div class="botones_juntos">
-        <button onclick="abrir_pagina_4()" class="btn_continuar">
-          Continuar
-          <i class="fa-solid fa-chevron-right"></i>
-        </button>
-  
-        <button class="btn_continuar" onclick="volver_a_pagina_2()"> 
-          <i class="fa-solid fa-chevron-left"></i>Regresar
-        </button>
-      </div>
-
-      <!-- Musica y Sonido-->
-      <audio id="musicaFondo">
-        <source src="./imgs/musica_age2.mp3" type="audio/mpeg">
-      </audio>
-      <audio id="sonido">
-        <source src="./imgs/grito_espartano.mp3" type="audio/mpeg">
-      </audio>
-
-
-    </div> <!-- Fin Pagina 3 (para 3 jugadores)-->
-
-    <div id="pagina_4" class="pagina_4" style="display: none"> <!-- style="display: none" -->
-      <h1>Contador de Puntos</h1>
-
-      <div class="parte_arriba">
-        <div class="contador_1" id="placa_jugador_naranja">
-          <div class="nombre" id="nombre_jugador_naranja">Player 1</div>
-          <div class="valor" id="j.naranja">3</div>
-          <button class="btn" onclick="decrementar('j.naranja')"><i class="fa-solid fa-minus"></i></button>
-          <button class="btn" onclick="incrementar('j.naranja')"><i class="fa-solid fa-plus"></i></button>
-          
-          
-        </div>
-        
-        <div class="contador_2" id="placa_jugador_azul">
-          <div class="nombre" id="nombre_jugador_azul">Player 2</div>
-          <div class="valor" id="j.azul">3</div>
-          <button class="btn" onclick="decrementar('j.azul')"><i class="fa-solid fa-minus"></i></button>
-          <button class="btn" onclick="incrementar('j.azul')"><i class="fa-solid fa-plus"></i></button>
-          
-          
-        </div>
-        
-        <div class="contador_3" id="placa_jugador_rojo">
-          <div class="nombre" id="nombre_jugador_rojo">Player 3</div>
-          <div class="valor" id="j.rojo">3</div>
-          <button class="btn" onclick="decrementar('j.rojo')"><i class="fa-solid fa-minus"></i></button>
-          <button class="btn" onclick="incrementar('j.rojo')"><i class="fa-solid fa-plus"></i></button>
-          
-          
-        </div>
-        
-        <div class="contador_4" id="placa_jugador_blanco">
-          <div class="nombre" id="nombre_jugador_blanco">Player 4</div>
-          <div class="valor" id="j.blanco">3</div>
-          <button class="btn" onclick="decrementar('j.blanco')"><i class="fa-solid fa-minus"></i></button>
-          <button class="btn" onclick="incrementar('j.blanco')"><i class="fa-solid fa-plus"></i></button>
-          
-          
-        </div>
-      </div> <!-- Fin Parte_Arriba-->
-  
-      <div class="parte_abajo">
-        <div class="contador_5" id="div_fuerza_barbara">
-          <div class="nombre">Fuerza Barbara</div>
-          <div class="valor" id="f.barbara">4</div>
-          <button class="btn" onclick="decrementar('f.barbara')"><i class="fa-solid fa-minus"></i></button>
-          <button class="btn" onclick="incrementar('f.barbara')"><i class="fa-solid fa-plus"></i></button>
-          
-        </div>
-        
-        <div class="contador_6" id="div_fuerza_caballeros">
-          <div class="nombre">Fuerza de Caballeros</div>
-          <div class="valor" id="f.caballeros">0</div>
-          <button class="btn" id="reiniciar_F.Caballeros"><i class="fa-solid fa-arrow-rotate-left"></i></button>
-          <button class="btn" onclick="decrementar('f.caballeros')"><i class="fa-solid fa-minus"></i></button>
-          <button class="btn" onclick="incrementar('f.caballeros')"><i class="fa-solid fa-plus"></i></button>
-        </div>
-      </div> <!-- Fin Parte_Abajo-->
-  
-      <div class="resumen" id="resumen">
-        Están Perdiendo
-      </div>
-  
-      <div class="parte_final">
-        <button class="btn_continuar" id="reiniciar">Reiniciar Partida</button>
-      </div>
-
-    </div> <!-- Fin Pagina 4 -->
   
   </div> <!-- Fin del Main -->
 

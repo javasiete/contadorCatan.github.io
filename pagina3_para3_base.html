@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Contador Catan Base</title> <!-- TITULO EN LA PESTAÑA -->
+
+    <!-- Link a los iconitos -->
+    <script src="https://kit.fontawesome.com/c3d324dd6f.js" crossorigin="anonymous"></script>
+
+    <!-- Link a los Estilos en CSS -->
+    <link rel="stylesheet" href="./Styles/main_style.css"/>
+
+  </head>
+
+  
+  <div class="main">
+    <div id="pagina_3">
+      <h1>Partida para 3 Jugadores</h1>
+
+      <button id="botonDetener" onclick="detenerMusica()" class="boton_musiquita";>
+        <i class="fa-solid fa-volume-high" id="musica_ON"></i>
+      </button>
+
+      <button id="botonReproducir" onclick="reproducirMusica()" class="boton_musiquita";> 
+        <i class="fa-solid fa-volume-xmark" id="musica_OFF"></i>
+      </button>
+
+      
+
+      <div id="box_jugador1">
+        <h3>Jugador Naranja:</h3>
+        <input type="text" class="input_nombre" id="persona1" style="width: 200px" placeholder="Escriba aquí el Nombre">
+      </div>
+      <div id="box_jugador2">
+        <h3>Jugador Azul:</h3>
+        <input type="text" class="input_nombre" id="persona2" style="width: 200px" placeholder="Escriba aquí el Nombre">
+      </div>
+      <div id="box_jugador3">
+        <h3>Jugador Rojo:</h3>
+        <input type="text" class="input_nombre" id="persona3" style="width: 200px" placeholder="Escriba aquí el Nombre">
+      </div>
+      <div id="box_jugador4">
+        <h3>Jugador Blanco:</h3>
+        <input type="text" class="input_nombre" id="persona4" style="width: 200px" placeholder="Escriba aquí el Nombre">
+      </div>
+
+      <div class="botones_juntos">
+        <button onclick="abrir_pagina_4()" class="btn_continuar">
+          Continuar
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+  
+        <button onclick="abrir_pagina_2_para3y4()" class="btn_continuar"> 
+          <i class="fa-solid fa-chevron-left"></i>Regresar
+        </button>
+
+      </div>
+      
+      
+      
+
+      <audio id="musicaFondo">
+        <source src="./imgs/musica_age2.mp3" type="audio/mpeg">
+      </audio>
+      <audio id="sonido">
+        <source src="./imgs/grito_espartano.mp3" type="audio/mpeg">
+      </audio>
+
+    </div>
+
+    <div id="pagina_4" class="pagina_4"> <!-- style="display: none" -->
+      <h1>Contador de Puntos</h1>
+      
+      <div class="parte_arriba">
+        <div id="contador_1">
+          <div class="nombre" id="nombre_jugador_naranja">Player 1</div>
+          <div class="valor" id="j.naranja">2</div>
+          <button class="btn" onclick="decrementar('j.naranja')"><i class="fa-solid fa-minus"></i></button>
+          <button class="btn" onclick="incrementar('j.naranja')"><i class="fa-solid fa-plus"></i></button>
+          
+        </div>
+        
+        <div id="contador_2">
+          <div class="nombre" id="nombre_jugador_azul">Player 2</div>
+          <div class="valor" id="j.azul">2</div>
+          <button class="btn" onclick="decrementar('j.azul')"><i class="fa-solid fa-minus"></i></button>
+          <button class="btn" onclick="incrementar('j.azul')"><i class="fa-solid fa-plus"></i></button>
+          
+        </div>
+        
+        <div id="contador_3">
+          <div class="nombre" id="nombre_jugador_rojo">Player 3</div>
+          <div class="valor" id="j.rojo">2</div>
+          <button class="btn" onclick="decrementar('j.rojo')"><i class="fa-solid fa-minus"></i></button>
+          <button class="btn" onclick="incrementar('j.rojo')"><i class="fa-solid fa-plus"></i></button>
+          
+        </div>
+        
+        <div id="contador_4">
+          <div class="nombre" id="nombre_jugador_blanco">Player 4</div>
+          <div class="valor" id="j.blanco">2</div>
+          <button class="btn" onclick="decrementar('j.blanco')"><i class="fa-solid fa-minus"></i></button>
+          <button class="btn" onclick="incrementar('j.blanco')"><i class="fa-solid fa-plus"></i></button>
+          
+        </div>
+      </div> <!-- Fin Parte_Arriba-->
+  
+      
+  
+      <div class="parte_final">
+        <button class="btn_continuar" id="reiniciar">Reiniciar Partida</button>
+      </div>
+
+    </div> <!-- Fin DIV para jugar -->
+
+    
+
+    
+
+
+    
+  </div>
+  
+  
+
+  <script src="./JS/para4jugadores_base.js"></script>
+  
+</html>

@@ -6,9 +6,6 @@ const botonDetener = document.getElementById('botonDetener');
 
 var suenaMusica = null;
 
-// Este evento hace que al hacer click se active la Funcion (reproducirMusica)
-document.body.addEventListener('click', reproducirMusica); 
-
 function reproducirMusica() {
   musicaFondo.play();
 
@@ -22,6 +19,8 @@ function reproducirMusica() {
   botonDetener.style.visibility = 'visible';
 
 }
+
+document.body.addEventListener('click', reproducirMusica);
 
 function detenerMusica() {
   musicaFondo.pause();
@@ -37,71 +36,136 @@ function detenerMusica() {
 musicaFondo.onended = function() {
   botonReproducir.style.visibility = 'visible';
   botonDetener.style.visibility= 'hidden';
+} 
+
+//-------------------------------------------------------------------------------------------------------------------------
+//Trae los datos de la Pag.2 en forma de JSON:
+
+// Obtenemos la cadena JSON del Local Storage
+const coloresJSON = localStorage.getItem('coloresSeleccionados');
+
+//convertimos la cadena JSON a un Objeto
+const colores = JSON.parse(coloresJSON);
+
+// Muestra los colores en el DIV
+if (coloresJSON) {
+    
+    console.log (`Colores guardados: ${JSON.stringify(colores)}`);
 }
 
 //-------------------------------------------------------------------------------------------------------------------------
-// PAGINA 2
+// Función para que "Si no esta el COLOR dentro del Array" los Boxes no aparezcan (con style.display):
 
-var box_jugador1 = document.getElementById('box_jugador1');
-var box_jugador2 = document.getElementById('box_jugador2');
-var box_jugador3 = document.getElementById('box_jugador3');
-var box_jugador4 = document.getElementById('box_jugador4'); 
-var box_jugador5 = document.getElementById('box_jugador5'); 
-var box_jugador6 = document.getElementById('box_jugador6'); 
+function mostrarBoxes(array) {
+  //Box para Color NARANJA:
+  if (!array.includes("Naranja")) {
+      document.getElementById('box_jugador1').style.display = 'none';
+      document.getElementById('contador_1').style.display = 'none';
+  }
+  //Box para Color AZUL:
+  if (!array.includes("Azul")) {
+      document.getElementById('box_jugador2').style.display = 'none';
+      document.getElementById('contador_2').style.display = 'none';
+  }
+  //Box para el Color ROJO:
+  if (!array.includes("Rojo")) {
+    document.getElementById('box_jugador3').style.display = 'none';
+    document.getElementById('contador_3').style.display = 'none';
+  }
+  //Box para el Color BLANCO:
+  if (!array.includes("Blanco")) {
+    document.getElementById('box_jugador4').style.display = 'none';
+    document.getElementById('contador_4').style.display = 'none';
+  }
+  //Box para el Color VERDE:
+  if (!array.includes("Verde")) {
+    document.getElementById('box_jugador5').style.display = 'none';
+    document.getElementById('contador_7').style.display = 'none';
+  }
+  //Box para el Color MARRON:
+  if (!array.includes("Marrón")) {
+    document.getElementById('box_jugador6').style.display = 'none';
+    document.getElementById('contador_8').style.display = 'none';
+  }
 
-var placa_jugador_naranja = document.getElementById('placa_jugador_naranja');
-var placa_jugador_azul = document.getElementById('placa_jugador_azul');
-var placa_jugador_rojo = document.getElementById('placa_jugador_rojo');
-var placa_jugador_blanco = document.getElementById('placa_jugador_blanco');
-var placa_jugador_verde = document.getElementById('placa_jugador_verde');
-var placa_jugador_marron = document.getElementById('placa_jugador_marron');
+}
 
-//-----------------------------------------------------------------------------------------------------//
-// PAGINA 3
+// Activa la función de arriba.
+mostrarBoxes(colores);
 
-// Coloca los NOMBRES de cada JUGADOR en su Placa de Contadores:
+//-------------------------------------------------------------------------------------------------------------------------
+// Captura los nombres de los INPUT para que aparezcan en la Pag.4
+
+// Obtener el valor del input
+var nombre1 = document.getElementById('persona1'); //jugador Naranja
+var nombre2 = document.getElementById('persona2'); //jugador Azul
+var nombre3 = document.getElementById('persona3'); //jugador Rojo
+var nombre4 = document.getElementById('persona4'); //jugador Blanco
+var nombre5 = document.getElementById('persona5'); //jugador Verde
+var nombre6 = document.getElementById('persona6'); //jugador Marron
+
+var nombreJugadorNaranja = document.getElementById('nombre_jugador_naranja'); //jugador Naranja
+var nombreJugadorAzul = document.getElementById('nombre_jugador_azul'); //jugador Azul
+var nombreJugadorRojo = document.getElementById('nombre_jugador_rojo'); //jugador Rojo
+var nombreJugadorBlanco = document.getElementById('nombre_jugador_blanco'); //jugador Blanco
+var nombreJugadorVerde = document.getElementById('nombre_jugador_verde'); //jugador Verde
+var nombreJugadorMarron = document.getElementById('nombre_jugador_marron'); //jugador Marron
+
+function mostrar(){
+  const nombreNaranja = nombre1.value;
+  nombreJugadorNaranja.textContent = nombreNaranja;
+
+  const nombreAzul = nombre2.value;
+  nombreJugadorAzul.textContent = nombreAzul;
+
+  const nombreRojo = nombre3.value;
+  nombreJugadorRojo.textContent = nombreRojo;
+
+  const nombreBlanco = nombre4.value;
+  nombreJugadorBlanco.textContent = nombreBlanco;
+
+  const nombreVerde = nombre5.value;
+  nombreJugadorVerde.textContent = nombreVerde;
+
+  const nombreMarron = nombre6.value;
+  nombreJugadorMarron.textContent = nombreMarron}
+
+
 function mostrarNombre() {
-  // Obtener el valor del input
-  var nombre1 = document.getElementById('persona1').value; //jugador Naranja
-  var nombre2 = document.getElementById('persona2').value; //jugador Azul
-  var nombre3 = document.getElementById('persona3').value; //jugador Rojo
-  var nombre4 = document.getElementById('persona4').value; //jugador Blanco
-  var nombre5 = document.getElementById('persona5').value; //jugador Verde
-  var nombre6 = document.getElementById('persona6').value; //jugador Marrón
   
-  // Mostrar el nombre en el div
-  var nombreJugadorNaranja = document.getElementById('nombre_jugador_naranja');
-  nombreJugadorNaranja.textContent = nombre1;
-  var nombreJugadorAzul = document.getElementById('nombre_jugador_azul');
-  nombreJugadorAzul.textContent = nombre2;
-  var nombreJugadorRojo = document.getElementById('nombre_jugador_rojo');
-  nombreJugadorRojo.textContent = nombre3;
-  var nombreJugadorBlanco = document.getElementById('nombre_jugador_blanco');
-  nombreJugadorBlanco.textContent = nombre4;
+  const nombreNaranja = nombre1.value;
+  nombreJugadorNaranja.textContent = nombreNaranja;
+
+  const nombreAzul = nombre2.value;
+  nombreJugadorAzul.textContent = nombreAzul;
+
+  const nombreRojo = nombre3.value;
+  nombreJugadorRojo.textContent = nombreRojo;
+
+  const nombreBlanco = nombre4.value;
+  nombreJugadorBlanco.textContent = nombreBlanco;
   
-  var nombreJugadorVerde = document.getElementById('nombre_jugador_verde');
-  nombreJugadorVerde.textContent = nombre5;
-  var nombreJugadorMarron = document.getElementById('nombre_jugador_marron');
-  nombreJugadorMarron.textContent = nombre6;
 }
 
 //-------------------------------------------------------------------------------------------------------------------------
-//Boton para cuando PASA A LA PAGINA 4 (placa_contadores):
-var pagina_4 = document.getElementById('pagina_4');
+//Boton para cuando PASA A LA SIGUIENTE PAGINA:
+
+//Boton para ir a la Pagina 4:
 
 function abrir_pagina_4() {
-  document.getElementById('pagina_3_para6jugadores').style.display = 'none';
-  document.getElementById('pagina_4').style.display = 'block';
+  var divCaballeros = document.getElementById('f.caballeros');
+  divCaballeros.classList.add('red-text');
+  mostrar();
 
-  mostrarNombre();
+  document.getElementById('pagina_3').style.display = 'none';
+  document.getElementById('pagina_4').style.display = 'block';  
 }
 
-// Boton para REGRESAR a la Pagina 1, porque desde esta no se puede volver más que a esa.
+// Boton para REGRESAR a la Pagina 2 (Para 5y6 Jugadores):
 
-document.getElementById('boton_regresar_pag1').addEventListener('click', function() {
-  window.location.href = './index.html';
-});
-
+function abrir_pagina_2_para5y6() {
+  window.location.href = './pagina2_para5y6.html';
+}
 
 //-------------------------------------------------------------------------------------------------------------------------
 // PAGINA 4
@@ -203,7 +267,7 @@ botonBorrar.addEventListener('click', function() { //Lo que hace el Btn de Reset
   var divBarbara = document.getElementById('f.barbara');
   var divCaballeros = document.getElementById('f.caballeros');
 
-  var respuesta = window.confirm('¿Deseas reiniciar la Partida"?');
+  var respuesta = window.confirm('¿Deseas reiniciar la Partida?');
   if (respuesta) {
     divNaranja.textContent = "3";
     divAzul.textContent = "3";
