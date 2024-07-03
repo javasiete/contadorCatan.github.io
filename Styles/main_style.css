@@ -129,6 +129,22 @@ h3{
 
 }
 
+.boton_mapGenerator {
+  display: inline-block;
+  background-image: url('../imgs/mapGenerator.jpg');
+  background-size: cover;
+  width: 130px; /* ajusta el ancho según tu imagen */
+  height: 130px; /* ajusta el alto según tu imagen */
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.boton_mapGenerator:hover {
+  /* Estilos adicionales cuando el mouse está sobre el botón */
+  opacity: 0.8; /* Por ejemplo, reduce la opacidad */
+}
+
 /*----------------------------------------------------------------------------------*/
 /*Pagina 2 (Seleccionar Color)*/
 

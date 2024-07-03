@@ -1,0 +1,83 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+.contenedor{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.tablero {
+  position: relative;
+  width: 460px; /* Ancho total del tablero */
+  height: 460px; /* Altura total del tablero */
+  background-color: #b3e0f2; 
+  clip-path: polygon(
+      25% 0%,
+      75% 0%,
+      100% 50%,
+      75% 100%,
+      25% 100%,
+      0% 50%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Para ocultar partes del hexágono que se salgan del clip-path */
+}
+.fila {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+}
+.hexagono {
+  width: 70px;
+  height: 80.8px;
+  background-color: lightgrey;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  color: black;
+}
+.trigo { background-color: rgb(241, 241, 25); }
+.madera { background-color: darkgreen; }
+.pasto { background-color: rgb(88, 226, 88); }
+.arcilla { background-color: rgb(233, 124, 51); }
+.roca { background-color: rgb(180, 180, 180); }
+.desierto { background-color: #f5deb3; }
+.boton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+.boton {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  background-color: #3498db;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.boton:hover {
+  background-color: #2980b9;
+  transform: scale(1.1); /* Escalar un poco el botón al pasar el ratón */
+}
+
+
