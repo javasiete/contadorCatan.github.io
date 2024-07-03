@@ -20,6 +20,10 @@ function ir_a_pagina_2_para5y6() {
   window.location.href = './pagina2_para5y6.html';
 }
 
+function ir_mapGenerator() {
+  window.location.href = './mapGenerator.html';
+}
+
 //-------------------------------------------------------------------------------------------------------------------------
 // Sonido de Carta (DAME ALIMENTO)
 
