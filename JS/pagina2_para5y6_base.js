@@ -51,12 +51,10 @@ function actualizarVistaPaises() {
 // Para avanzar a la PAGINA 3:
 function ir_a_pagina_3() {
   if (guardarDato.length == 5) { 
-    console.log("Entro el numero 5");
     window.location.href = './pagina3_para5_base.html';
   };
 
   if (guardarDato.length == 6) {
-    console.log("Entro el numero 6");
     window.location.href = './pagina3_para6_base.html';
   };
 
@@ -67,7 +65,6 @@ function ir_a_pagina_3() {
   if (guardarDato.length <= 3){
     alert("Debes seleccionar entre 5 y 6 colores.")
   }
-
 
   // Convertimos el objeto a una cadena JSON
   const coloresJSON = JSON.stringify(guardarDato);

@@ -51,18 +51,15 @@ function actualizarVistaPaises() {
 
 function ir_a_pagina_3() {
   if (guardarDato.length == 3) { 
-    console.log("Entro el numero 3");
     window.location.href = './pagina3_para3_base.html';
-    
   };
 
   if (guardarDato.length == 4) {
-    console.log("Entro el numero 4");
     window.location.href = './pagina3_para4_base.html';
   };
 
   if (guardarDato.length <= 1){
-    alert("Debes seleccionar entre 3 y 4 colores. Te faltan al menos marcar 2 más.")
+    alert("Debes seleccionar entre 3 y 4 colores.")
   }
 
   if (guardarDato.length == 2){

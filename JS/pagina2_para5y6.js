@@ -51,13 +51,10 @@ function actualizarVistaPaises() {
 // Para avanzar a la PAGINA 3:
 function ir_a_pagina_3() {
   if (guardarDato.length == 5) { 
-    console.log("Entro el numero 5");
     window.location.href = './pagina3_para5.html';
-    
   };
 
   if (guardarDato.length == 6) {
-    console.log("Entro el numero 6");
     window.location.href = './pagina3_para6.html';
   };
 
