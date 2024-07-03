@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Generator del Catan</title>
+
+    <!-- Link a los Estilos en CSS -->
+    <link rel="stylesheet" href="./Styles/mapGenerator_style.css"/>
+
+  </head>
+  <body>
+
+    <div class="contenedor">
+
+      <div class="tablero" id="tablero">
+        <div class="fila">
+            <div class="hexagono"></div>
+            <div class="hexagono"></div>
+            <div class="hexagono"></div>
+        </div>
+        <div class="fila">
+            <div class="hexagono"></div>
+            <div class="hexagono"></div>
+            <div class="hexagono"></div>
+            <div class="hexagono"></div>
+        </div>
+        <div class="fila">
+            <div class="hexagono"></div>
+            <div class="hexagono"></div>
+            <div class="hexagono"></div>
+            <div class="hexagono"></div>
+            <div class="hexagono"></div>
+        </div>
+        <div class="fila">
+            <div class="hexagono"></div>
+            <div class="hexagono"></div>
+            <div class="hexagono"></div>
+            <div class="hexagono"></div>
+        </div>
+        <div class="fila">
+            <div class="hexagono"></div>
+            <div class="hexagono"></div>
+            <div class="hexagono"></div>
+        </div>
+      </div>
+
+      <button class="boton" onclick="crearTablero()">Rehacer Tablero</button>
+
+    </div> <!--Fin del Contenedor-->
+    
+    <script>
+      const terrenos = [
+          { tipo: 'trigo', min: 4, max: 4 },
+          { tipo: 'madera', min: 4, max: 4 },
+          { tipo: 'pasto', min: 4, max: 4 },
+          { tipo: 'arcilla', min: 3, max: 3 },
+          { tipo: 'roca', min: 3, max: 3 },
+          { tipo: 'desierto', min: 1, max: 1 }
+      ];
+
+      const filas = [3, 4, 5, 4, 3];
+      let tablero = [];
+      const tableroDiv = document.getElementById('tablero');
+
+      function mezclarTerrenos() {
+          let listaTerrenos = [];
+          terrenos.forEach(terreno => {
+              for (let i = 0; i < terreno.max; i++) {
+                  listaTerrenos.push(terreno.tipo);
+              }
+          });
+          return listaTerrenos.sort(() => Math.random() - 0.5);
+      }
+
+      function terrenoValido(x, y, terreno) {
+          const direcciones = [
+              [0, -1], [0, 1], [-1, 0], [1, 0], 
+              [-1, -1], [1, 1], [-1, 1], [1, -1]
+          ];
+          let countDesierto = 0;
+          let countRoca = 0;
+          let countArcilla = 0;
+          let countPasto = 0;
+          let countMadera = 0;
+          
+          for (const [dx, dy] of direcciones) {
+              const nx = x + dx;
+              const ny = y + dy;
+              if (nx >= 0 && nx < filas.length && ny >= 0 && ny < filas[nx] && tablero[nx] && tablero[nx][ny] === terreno) {
+                  return false;
+              }
+              if (tablero[nx] && tablero[nx][ny] === 'desierto') {
+                  countDesierto++;
+              } else if (tablero[nx] && tablero[nx][ny] === 'roca') {
+                  countRoca++;
+              } else if (tablero[nx] && tablero[nx][ny] === 'arcilla') {
+                  countArcilla++;
+              } else if (tablero[nx] && tablero[nx][ny] === 'pasto') {
+                  countPasto++;
+              } else if (tablero[nx] && tablero[nx][ny] === 'madera') {
+                  countMadera++;
+              }
+          }
+          
+          if (terreno === 'desierto' && countDesierto >= 1) {
+              return false;
+          }
+          if (terreno === 'roca' && countRoca >= 3) {
+              return false;
+          }
+          if (terreno === 'arcilla' && countArcilla >= 3) {
+              return false;
+          }
+          if (terreno === 'pasto' && countPasto >= 4) {
+              return false;
+          }
+          if (terreno === 'madera' && countMadera >= 4) {
+              return false;
+          }
+          
+          return true;
+      }
+
+      function colocarTerreno(x, y, listaTerrenos) {
+          for (let intentos = 0; intentos < listaTerrenos.length; intentos++) {
+              const terreno = listaTerrenos[intentos];
+              const { min, max } = terrenos.find(t => t.tipo === terreno);
+              if (terrenoValido(x, y, terreno)) {
+                  if (min > 0) {
+                      terrenos.find(t => t.tipo === terreno).min--;
+                  }
+                  return terreno;
+              }
+          }
+          return null;
+      }
+
+      function crearTablero() {
+          tableroDiv.innerHTML = '';
+          tablero = [];
+          let listaTerrenos = mezclarTerrenos();
+          let index = 0;
+
+          for (let i = 0; i < filas.length; i++) {
+              const filaDiv = document.createElement('div');
+              filaDiv.className = 'fila';
+              tablero[i] = [];
+              for (let j = 0; j < filas[i]; j++) {
+                  let terreno;
+                  do {
+                      terreno = colocarTerreno(i, j, listaTerrenos);
+                      if (terreno) {
+                          listaTerrenos.splice(listaTerrenos.indexOf(terreno), 1);
+                          break;
+                      } else {
+                          listaTerrenos = mezclarTerrenos();
+                          index = 0;
+                      }
+                  } while (!terreno);
+                  tablero[i][j] = terreno;
+                  const hexagono = document.createElement('div');
+                  hexagono.className = `hexagono ${terreno}`;
+                  filaDiv.appendChild(hexagono);
+              }
+              tableroDiv.appendChild(filaDiv);
+          }
+
+          if (!validarTablero()) {
+              console.log("Generando nuevo tablero...");
+              crearTablero();
+          } else {
+              console.log("Tablero creado correctamente.");
+          }
+      }
+
+      function validarTablero() {
+          let countTrigo = 0;
+          let countMadera = 0;
+          let countPasto = 0;
+          let countArcilla = 0;
+          let countRoca = 0;
+          let countDesierto = 0;
+
+          for (let i = 0; i < tablero.length; i++) {
+              for (let j = 0; j < tablero[i].length; j++) {
+                  switch (tablero[i][j]) {
+                      case 'trigo':
+                          countTrigo++;
+                          break;
+                      case 'madera':
+                          countMadera++;
+                          break;
+                      case 'pasto':
+                          countPasto++;
+                          break;
+                      case 'arcilla':
+                          countArcilla++;
+                          break;
+                      case 'roca':
+                          countRoca++;
+                          break;
+                      case 'desierto':
+                          countDesierto++;
+                          break;
+                  }
+              }
+          }
+
+          if (countTrigo !== 4 || countMadera !== 4 || countPasto !== 4 || countArcilla !== 3 || countRoca !== 3 || countDesierto !== 1) {
+              return false;
+          }
+
+          return true;
+      }
+
+      crearTablero();
+
+    </script>
+
+  </body>
+
+</html>
