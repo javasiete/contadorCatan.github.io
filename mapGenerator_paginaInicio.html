@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Generator del Catan</title>
+
+    <!-- Link a los iconitos -->
+    <script src="https://kit.fontawesome.com/c3d324dd6f.js" crossorigin="anonymous"></script>
+
+    <!-- Link a los Estilos en CSS -->
+    <link rel="stylesheet" href="./Styles/main_style.css"/>
+
+  </head>
+  <body>
+
+    <div class="main">
+        <div class="contenedor">
+
+            <h1>Seleccione el Juego que desea Mapear</h1>
+
+            <div class="mini_container_1">
+                
+                <div class="juegos_parte">
+                    
+                    <div class="mesa">
+                      <h2> Juego Base</h2>
+                      <a onclick="ir_a_mapGenerator_catanBase()">
+                      <img src="./imgs/catan_base.png" alt="" class="hipervinculo" width="150vw">
+                      </a>
+                      Mapa Base de Catan
+                    
+                    </div>
+                  
+                    <div class="mesa">
+                      <h2> Navegantes</h2>
+                      <a onclick="ir_a_mapGenerator_navegantes()">
+                      <img src="./imgs/catan_navegantes1.png" alt="" class="hipervinculo" width="150vw">
+                      </a>
+                      Mapa de Islas con Neblina
+
+                    </div>
+                </div>
+            </div> <!-- Fin "Mini-Container"-->
+            
+        
+            <button class="btn_continuar" onclick="ir_a_pagina_inicio()"> 
+                <i class="fa-solid fa-chevron-left"></i>Regresar
+            </button>
+           
+
+      
+        </div> <!--Fin del Contenedor-->
+
+    </div> <!--Fin del Main-->
+    
+    
+    <script src="./JS/mapGenerator_paginaInicio.js"></script>
+
+  </body>
+
+</html>

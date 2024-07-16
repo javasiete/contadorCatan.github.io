@@ -1,0 +1,536 @@
+    /* Selector universal */
+    * {
+      font-family: "Ubuntu", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 980px;
+      width: 100%;
+      background-color: #f0f0f0;
+    }
+    html {
+      width: 100%;
+      height: 100%;
+    }
+    .main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 50px;
+      gap: 10px;
+      height: 100%;
+      width: 100%;
+      background-image: url('../imgs/fondo.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: #000;
+    }
+    .background {
+      height: 100%;
+      width: 100%;
+      background-image: url('../imgs/fondo.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: #000;
+    }
+    h1 {
+      color: orange;
+      text-decoration: underline;
+      padding-bottom: 10px;
+    }
+    h2 {
+      padding-bottom: 10px;
+    }
+    h3 {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    .contenedor {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .tablero {
+      position: relative;
+      width: 720px;
+      height: 640px;
+      background-color: #b3e0f2;
+      clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .fila {
+      display: flex;
+      justify-content: center;
+      gap: 2px;
+    }
+    .hexagono {
+      width: 70px;
+      height: 80.8px;
+      background-color: lightgrey;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 12px;
+      color: black;
+      position: relative;
+    }
+    .trigo { background-color: rgb(241, 241, 25); }
+    .madera { background-color: darkgreen; }
+    .pasto { background-color: rgb(88, 226, 88); }
+    .arcilla { background-color: rgb(233, 124, 51); }
+    .roca { background-color: rgb(180, 180, 180); }
+    .desierto { background-color: #f5deb3; }
+    .agua { background-color: rgb(2, 153, 204); } /* Terreno de agua */
+    .niebla { background-color: white; } /* Terreno de niebla */  
+    .ficha {
+      position: absolute;
+      background-color: white;
+      border: 1px solid black;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: black;
+    }
+    .boton {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: 1px solid black;
+    }
+    .btn_reemplazar {
+      font-size: 1.5em;
+      padding: 5px 10px;
+      margin-top: 10px;
+      cursor: pointer;
+      border: none;
+      background-color: rgb(17, 69, 212);
+      color: white;
+      border-radius: 5px;
+      display: flex;
+      gap: 10px;
+    }
+    .btn_reemplazar:hover {
+      background-color: rgb(35, 89, 236);
+      transform: scale(1.1);
+    }
+
+    .btn_continuar {
+      font-size: 1.5em;
+      padding: 5px 10px;
+      margin-top: 10px;
+      cursor: pointer;
+      border: none;
+      background-color: rgb(119, 6, 6);
+      color: white;
+      border-radius: 5px;
+      display: flex;
+      gap: 10px;
+    }
+    .btn_continuar:hover {
+      background-color: rgba(219, 3, 3, 0.781);
+      transform: scale(1.1);
+    }
+    .div_botones {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 20px;
+    }
+
+    .fila {
+      display: flex;
+      justify-content: center;
+    }
+    .hexagono {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .letra {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .letra, .numero {
+      font-size: 20px;
+      font-weight: bold;
+      position: absolute;
+      z-index: 2;
+    }
+    .circulo-blanco {
+      width: 30px;
+      height: 30px;
+      background-color: white;
+      border-radius: 50%;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+    }
+    .rojo {
+      color: red;
+    }
+
+/*----------------------------*/ 
+@media screen and (max-width: 768px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 770px;
+    width: auto;
+    background-color: #f0f0f0;
+  }
+  .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    gap: 10px;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #000;
+  }
+  .background {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #000;
+  }
+
+  .contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .tablero {
+    position: relative;
+    width: 550px;
+    height: 480px;
+    background-color: #b3e0f2;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .fila {
+    display: flex;
+    justify-content: center;
+    gap: 1px;
+  }
+  .hexagono {
+    width: 60px;
+    height: 60px;
+
+    background-color: lightgrey;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    color: black;
+    position: relative;
+  }
+  .trigo { background-color: rgb(241, 241, 25); }
+  .madera { background-color: darkgreen; }
+  .pasto { background-color: rgb(88, 226, 88); }
+  .arcilla { background-color: rgb(233, 124, 51); }
+  .roca { background-color: rgb(180, 180, 180); }
+  .desierto { background-color: #f5deb3; }
+  .agua { background-color: rgb(2, 153, 204); } /* Terreno de agua */
+  .niebla { background-color: white; } /* Terreno de niebla */  
+  .ficha {
+    position: absolute;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: black;
+  }
+  .boton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid black;
+  }
+  .btn_reemplazar {
+    font-size: 1.5em;
+    padding: 5px 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    border: none;
+    background-color: rgb(17, 69, 212);
+    color: white;
+    border-radius: 5px;
+    display: flex;
+    gap: 10px;
+  }
+  .btn_reemplazar:hover {
+    background-color: rgb(35, 89, 236);
+    transform: scale(1.1);
+  }
+
+  .btn_continuar {
+    font-size: 1.5em;
+    padding: 5px 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    border: none;
+    background-color: rgb(119, 6, 6);
+    color: white;
+    border-radius: 5px;
+    display: flex;
+    gap: 10px;
+  }
+  .btn_continuar:hover {
+    background-color: rgba(219, 3, 3, 0.781);
+    transform: scale(1.1);
+  }
+  .div_botones {
+    padding-top: 15px;
+  }
+
+  .fila {
+    display: flex;
+    justify-content: center;
+  }
+  .hexagono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .letra {
+    font-size: 10px;
+    font-weight: bold;
+  }
+  .letra, .numero {
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    z-index: 2;
+  }
+  .circulo-blanco {
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+  }
+
+}
+/*-------------------------------------------------------------------------*/
+@media screen and (max-width: 400px) {
+
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 670px;
+    width: 375px;
+    background-color: #f0f0f0;
+  }
+  .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    gap: 10px;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #000;
+  }
+  .background {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #000;
+  }
+
+  .contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .tablero {
+    position: relative;
+    width: 340px;
+    height: 340px;
+    background-color: #b3e0f2;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .fila {
+    display: flex;
+    justify-content: center;
+    gap: 1px;
+  }
+  .hexagono {
+    width: 38px;
+    height: 38px;
+
+    background-color: lightgrey;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    color: black;
+    position: relative;
+  }
+  .trigo { background-color: rgb(241, 241, 25); }
+  .madera { background-color: darkgreen; }
+  .pasto { background-color: rgb(88, 226, 88); }
+  .arcilla { background-color: rgb(233, 124, 51); }
+  .roca { background-color: rgb(180, 180, 180); }
+  .desierto { background-color: #f5deb3; }
+  .agua { background-color: rgb(2, 153, 204); } /* Terreno de agua */
+  .niebla { background-color: white; } /* Terreno de niebla */  
+  .ficha {
+    position: absolute;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: black;
+  }
+  .boton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid black;
+  }
+  .btn_reemplazar {
+    font-size: 18px;
+    padding: 5px 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    border: none;
+    background-color: rgb(17, 69, 212);
+    color: white;
+    border-radius: 5px;
+    display: flex;
+    gap: 10px;
+  }
+  .btn_reemplazar:hover {
+    background-color: rgb(35, 89, 236);
+    transform: scale(1.1);
+  }
+
+  .btn_continuar {
+    font-size: 18px;
+    padding: 5px 8px;
+    margin-top: 10px;
+    cursor: pointer;
+    border: none;
+    background-color: rgb(119, 6, 6);
+    color: white;
+    border-radius: 5px;
+    display: flex;
+    gap: 10px;
+  }
+  .btn_continuar:hover {
+    background-color: rgba(219, 3, 3, 0.781);
+    transform: scale(1.1);
+  }
+  .div_botones {
+    padding-top: 15px;
+  }
+
+  .fila {
+    display: flex;
+    justify-content: center;
+  }
+  .hexagono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .letra {
+    font-size: 10px;
+    font-weight: bold;
+  }
+  .letra, .numero {
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    z-index: 2;
+  }
+  .circulo-blanco {
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+  }
+
+
+
+
+
+
+} /* FIN DE LA MEDIAQUERIES */

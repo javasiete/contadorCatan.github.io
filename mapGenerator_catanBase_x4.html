@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Generator del Catan</title>
+
+    <!-- Link a los iconitos -->
+    <script src="https://kit.fontawesome.com/c3d324dd6f.js" crossorigin="anonymous"></script>
+
+    <!-- Link a los Estilos en CSS -->
+    <link rel="stylesheet" href="./Styles/mapGenerator_catanBase_x4style.css"/>
+
+  </head>
+  <body>
+
+    <div class="main">
+        <div class="contenedor">
+
+            <div class="tablero" id="tablero">
+              <div class="fila">
+                  <div class="hexagono"></div>
+                  <div class="hexagono"></div>
+                  <div class="hexagono"></div>
+              </div>
+              <div class="fila">
+                  <div class="hexagono"></div>
+                  <div class="hexagono"></div>
+                  <div class="hexagono"></div>
+                  <div class="hexagono"></div>
+              </div>
+              <div class="fila">
+                  <div class="hexagono"></div>
+                  <div class="hexagono"></div>
+                  <div class="hexagono"></div>
+                  <div class="hexagono"></div>
+                  <div class="hexagono"></div>
+              </div>
+              <div class="fila">
+                  <div class="hexagono"></div>
+                  <div class="hexagono"></div>
+                  <div class="hexagono"></div>
+                  <div class="hexagono"></div>
+              </div>
+              <div class="fila">
+                  <div class="hexagono"></div>
+                  <div class="hexagono"></div>
+                  <div class="hexagono"></div>
+              </div>
+            </div>
+      
+            <div class="div_botones">
+                <button class="btn_reemplazar" onclick="reemplazarFichas()" id="btn_reemplazar"> 
+                    <i class="fa-solid fa-arrow-rotate-left"></i>Voltear Fichas (Números)
+                </button>
+
+                <button class="btn_reemplazar" onclick="ocultarFichas()" id="btn_ocultarFichas"> 
+                    Ocultar Fichas
+                </button>
+
+                <button class="btn_continuar" onclick="mostrarTerrenos()" id="btn_mostrarTerrenos"> 
+                    Terrenos 3D
+                </button>
+
+                <button class="btn_continuar" onclick="crearTablero()"> 
+                    <i class="fa-solid fa-arrow-rotate-left"></i>Generar Tablero Aleatorio
+                </button>
+
+                <button class="btn_continuar" onclick="crearTableroCentrado()" id="btn_crearTableroCentrado"> 
+                    <i class="fa-solid fa-arrow-rotate-left"></i>Generar Tablero Centrado
+                </button>
+        
+                <button class="btn_continuar" onclick="volver_pagina_mapGenerator()"> 
+                    <i class="fa-solid fa-chevron-left"></i>Regresar
+                </button>
+            </div> <!--Fin div_botones-->
+
+      
+        </div> <!--Fin del Contenedor-->
+
+    </div> <!--Fin del Main-->
+    
+    
+    <script src="./JS/tablero_catanBase_x4.js"></script>
+
+  </body>
+
+</html>

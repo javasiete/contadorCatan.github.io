@@ -21,7 +21,7 @@ function ir_a_pagina_2_para5y6() {
 }
 
 function ir_mapGenerator() {
-  window.location.href = './mapGenerator.html';
+  window.location.href = './mapGenerator_paginaInicio.html';
 }
 
 //-------------------------------------------------------------------------------------------------------------------------
